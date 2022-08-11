@@ -1,26 +1,21 @@
-<h3>定期預金</h3>
-<h3>債券</h3>
-<h3>投資信託</h3>
-<h3>不動産</h3>
-<h3>外貨資金</h3>
-<h3>FX</h3>
-<h3>株式投資</h3>
-
-
-
 <h1>勉強時間記録ページ</h1>
 <h3>Tweet一覧</h3>
 <%= link_to "勉強時間を記録する", new_study_path %>
 <div class="tweets-container">
   <% @studys.each do |t| %>
   <div class="tweet">
-    <%= t.body %> <%= t.created_at %> <%= link_to "詳細へ", study_path(t.id) %>
+  <%= t.user.nick %>
+  <h2>種類</h2>
+    <%= t.tipe %> 
+    <h5>学習時間</h5>
+    <%= t.body %>
+    <h5>学習内容</h5>
+    <%= t.learn %>
+     <%= link_to "詳細へ", study_path(t.id) %>
     <%= link_to "編集する", edit_study_path(t.id) %><%= button_to "削除する",
     study_path(t.id), method: :delete %>
   </div>
   <% end %>
 </div>
 
-<h1>あきと</h1>
-<h1>久保</h1>
-<h1>かずや</h1>
+

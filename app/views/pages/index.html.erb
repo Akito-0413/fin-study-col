@@ -1,0 +1,17 @@
+<%= link_to "ログイン", users_path %>
+<%= link_to "新規登録", new_user_registration_path %>
+
+<% if user_signed_in? %>
+
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<% end %>
+
+<%= link_to "マイページへ", user_path(current_user.id) %>
+
+<h3>定期預金</h3>
+<h3>債券</h3>
+<h3>投資信託</h3>
+<h3>不動産</h3>
+<h3>外貨資金</h3>
+<h3>FX</h3>
+<h3>株式投資</h3>

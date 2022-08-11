@@ -1,10 +1,26 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+  <%= devise_error_messages! %>
 
+  <!--アカウント編集時に名前を入力できるようにフォームを追加-->
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :名前 %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
+   <div class="field">
+    <%= f.label :ニックネーム %><br />
+    <%= f.text_field :nick, autofocus: true, autocomplete: "nick" %>
+  </div>
+
+  <!--アカウント編集時にプロフィールを入力できるようにフォームを追加-->
+  <div class="field">
+    <%= f.label :プロフィール %><br />
+    <%= f.text_area :profile, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :メールアドレス %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -13,16 +29,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :パスワード %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em><%= @minimum_password_length %> 文字以上入力をしてください！</em>
     <% end %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :パスワード確認 %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
@@ -36,8 +52,6 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>

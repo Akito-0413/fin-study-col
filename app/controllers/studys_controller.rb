@@ -10,6 +10,7 @@ end
 
   def create
     study = Study.new(study_params)
+    study.user_id = current_user.id
     if study.save
       redirect_to :action => "index"
     else
@@ -42,6 +43,6 @@ end
 
   private
   def study_params
-    params.require(:study).permit(:body)
+    params.require(:study).permit(:body, :learn, :tipe)
   end
 end

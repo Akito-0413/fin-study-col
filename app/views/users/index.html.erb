@@ -1,0 +1,12 @@
+<h1><%= link_to "トップに戻る", pages_path %></h1>
+
+<p>ログインしているUser</p>
+<p><%= @user.email %></p>
+
+
+user一覧
+<% @users.each do |u| %>
+  <div>
+    <%= link_to u.nick, user_path(u.id) %>
+  </div>
+<% end %>

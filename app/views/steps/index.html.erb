@@ -1,0 +1,18 @@
+<h1>勉強時間記録ページ</h1>
+<h3>Tweet一覧</h3>
+<%= link_to "おすすめの書籍または動画を紹介する", new_step_path %>
+<div class="tweets-container">
+  <% @steps.each do |t| %>
+  <div class="tweet">
+  <%= t.user.nick %>
+  <h2>種類</h2>
+    <%= t.body_second %> 
+    <h5>学習時間</h5>
+    <%= t.book %>
+    <h5>学習内容</h5>
+     <%= link_to "詳細へ", step_path(t.id) %>
+    <%= link_to "編集する", edit_step_path(t.id) %><%= button_to "削除する",
+    step_path(t.id), method: :delete %>
+  </div>
+  <% end %>
+</div>
