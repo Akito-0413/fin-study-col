@@ -1,0 +1,8 @@
+<h1>勉強時間記録ページ</h1>
+<h3>勉強時間を記録する</h3>
+<%= form_for @study, url: studys_path do |f| %>
+<div class="field">
+  <%= f.label :勉強時間を入力 %> <%= f.text_field :body, :size => 140 %>
+</div>
+<%= f.submit "記録する" %> <% end %> <%= link_to "トップページに戻る", studys_path
+%>
