@@ -18,9 +18,7 @@ end
     end
   end
 
-  def show
-    @study = Study.find(params[:id])
-  end
+ 
 
   def edit
     @study = Study.find(params[:id])

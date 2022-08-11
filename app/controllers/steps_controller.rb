@@ -17,9 +17,7 @@ class StepsController < ApplicationController
         end
       end
     
-      def show
-        @step = Step.find(params[:id])
-      end
+
     
       def edit
         @step = Step.find(params[:id])

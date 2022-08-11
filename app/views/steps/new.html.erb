@@ -2,10 +2,10 @@
 <h3>勉強時間を記録する</h3>
 <%= form_for @step, url: steps_path do |f| %>
 <div class="field">
-  <%= f.label :書名を入力 %> <%= f.text_field :book, :size => 140 %>
+  <%= f.label :書名を入力 %> <%= f.text_field :book, :size => 50 %>
   <br>
  
-  <%= f.label :閲覧または読んだ感想を教えてください %> <%= f.text_area :body_second, :size => 140 %>
+  <%= f.label :閲覧または読んだ感想を教えてください %> <br><%= f.text_area :body_second, :size => 140 %>
   <br>
 </div>
 <%= f.submit "記録する" %> <% end %> <%= link_to "トップページに戻る", steps_path

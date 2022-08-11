@@ -1,0 +1,40 @@
+<%= form_for(@page, class: 'form-horizontal', role: 'form') do |f| %>
+            <div class="container-sindan">
+                <div class="row">
+                    <div class="col-12">
+                        <p>Question1. お金を稼ぐにあたって</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "1", nil %>高リスクだとしても一攫千金を狙っていきたい</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "2", nil %>低リスクで確実にお金を稼ぎたい</p>
+                    </div>
+
+                    <div class="col-12">
+                        <p>Question2. あなたが最終的に受験しようと思った大学は？</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "1", nil %>D判定だけど第一志望の大学</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "2", nil %>B判定だけど第4志望の大学</p>
+                    </div>
+
+                    <div class="col-12">
+                        <p>Question3. あまり投資に時間を割くことができない。または割きたくない。</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "1", nil %>その通りである</p>
+                    </div>
+                    <div class="col-6">
+                        <p><%= f.check_box :question, {multiple: true}, "2", nil %>時間を割くことができる。また割きたい。</p>
+                    </div>
+
+                   
+                </div>
+            </div>
+            <div class="sindanbotan">
+                <%= f.submit "送信" %>
+            </div>
+<% end %>
