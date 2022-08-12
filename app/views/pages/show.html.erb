@@ -1,17 +1,17 @@
 <div class="intoro">
-            <h5>診断結果</h5>
+            <h2>診断結果</h2>
             <p class="yourType">あなたの投資タイプは！？</p>
         </div>
         <div class="type-container">
-            <div class="tweet">
+            <div class="typeSecond-container">
                 <% if @page.question == "111" %>
                 <div class="card">
                 <h3>ハイリスク・ハイリターンタイプ！</h3>
-                <img src="@/app/views/images/high.png" class="fluid">
+                <img src="https://github.com/benesse-hackson-2022/fin-study-col/blob/master/app/views/images/high.png?raw=true" class="rounded mx-auto d-block">
                 <p>投資が順調に進んでいる時には大きな利益を生むことができ、不調に陥ると一気に０になってしまう可能性が高い投資タイプ！</p>
                 <p>短期で大きな利益を生むことができて一気に有名資産家に成り上がれるかも？</p>
                 <p>株式投資やFXがおすすめ！</p>
-                 <%= link_to "さあ学習を始めよう！", pages_path%>
+                 <%= link_to "さあ学習を始めよう！", pages_path, class: "btn btn-primary"%>
                   </div>
                
                 <% elsif @page.question == "112" %>
@@ -64,6 +64,10 @@
         </div>
 
 <style>
+
+.rounded mx-auto d-block{
+    width: 30%;
+}
 .intoro{
      text-align: center;
 }
