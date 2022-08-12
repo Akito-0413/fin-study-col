@@ -31,7 +31,10 @@ ActiveRecord::Schema.define(version: 2022_08_11_201419) do
   create_table "steps", force: :cascade do |t|
     t.string "book"
     t.text "body_second"
+    t.string "tipe_second"
     t.integer "user_id"
+    t.string "image"
+    t.integer "star"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

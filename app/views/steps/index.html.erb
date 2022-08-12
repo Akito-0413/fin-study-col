@@ -1,20 +1,19 @@
 <h1>おすすめの参考書コーナー</h1>
 <h3>参考書一覧</h3>
-<%= link_to "おすすめの書籍または動画を", new_step_path %>
-
+<%= link_to "おすすめの書籍", new_step_path %>
 
 <div class="container">
   <div class="row">
   <% @steps.each do |t| %>
   <div class="col-sm-4" >
   <div class="card">
-  <%= t.user.nick %>
-  <h4>書籍名</h4>
-    <%= t.body_second %> 
-    <h5>学習時間</h5>
-    <%= t.book %>
-    <%= link_to "編集する", edit_step_path(t.id) %><%= button_to "削除する",
-    step_path(t.id), method: :delete %>
+  <h2><%= t.user.nick %> </h2>
+    <%= t.book %> <br>
+    #<%= t.tipe_second %> <br>
+    <%= t.body_second %> <br>
+  
+     <%= image_tag t.image_url, size: "250x200" if t.image? %>
+   <%= button_to "削除する",step_path(t.id), method: :delete %>
   </div>
   </div>
   <% end %>
@@ -23,6 +22,7 @@
 
 <style>
 .colo-sm-4.card{
-    background-color: #blue;
+    background-color: #skyblue;
 }
+
 </style>

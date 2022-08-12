@@ -40,6 +40,6 @@ class StepsController < ApplicationController
     
       private
       def step_params
-        params.require(:step).permit(:body_second, :book)
+        params.require(:step).permit(:body_second, :book, :image, :star, :tipe_second)
       end
 end
